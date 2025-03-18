@@ -1,0 +1,40 @@
+package com.app.todomanagement.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.todomanagement.dto.TodoDto;
+import com.app.todomanagement.entity.Todo;
+import com.app.todomanagement.repository.TodoRepository;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public class TodoServiceImpl implements TodoService {
+
+	@Autowired
+	private TodoRepository todoRepository;
+
+	@Override
+	public TodoDto addTodo(TodoDto todoDto) {
+		// convert TodoDto into Todo Jpa Entity
+		Todo todo = new Todo();
+		todo.setTitle(todoDto.getTitle());
+		todo.setDescription(todoDto.getDescription());
+		todo.setCompleted(todoDto.isCompleted());
+
+		// Todo Jpa entity
+		Todo savedTodo = todoRepository.save(todo);
+
+		// convert saved Todo Jpa entity into ToDto object
+
+		TodoDto savedTodoDto = new TodoDto();
+		savedTodoDto.setId(savedTodo.getId());
+		savedTodoDto.setTitle(savedTodo.getTitle());
+		savedTodoDto.setDescription(savedTodo.getDescription());
+		savedTodoDto.setCompleted(savedTodo.isCompleted());
+		return savedTodoDto;
+	}
+
+}

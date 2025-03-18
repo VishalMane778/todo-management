@@ -48,7 +48,6 @@ INDEX VERSION 1.134+E:\Projects\to-do-management\.metadata\.plugins\org.eclipse.
 3965105394.index
 28150433.index
 3874252085.index
-3840518321.index
 4082297320.index
 3796984534.index
 3278738389.index

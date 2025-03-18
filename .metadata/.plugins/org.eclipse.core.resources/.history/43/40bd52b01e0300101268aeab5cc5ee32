@@ -1,0 +1,28 @@
+package com.app.todomanagement.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.app.todomanagement.dto.TodoDto;
+import com.app.todomanagement.service.TodoService;
+
+import lombok.AllArgsConstructor;
+
+@RestController
+@RequestMapping("/todos")
+@AllArgsConstructor
+public class TodoController {
+	@Autowired
+	private TodoService todoService;
+	
+	@PostMapping
+	public ResponseEntity<TodoDto> addTodo(TodoDto todoDto)
+	{
+		TodoDto savedTodoDto=todoService.addTodo(todoDto);
+		return new ResponseEntity<TodoDto>(savedTodoDto,HttpStatus.CREATED);
+	}
+}

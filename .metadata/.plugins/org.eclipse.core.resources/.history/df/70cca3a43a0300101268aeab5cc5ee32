@@ -1,0 +1,9 @@
+package com.app.todomanagement.service;
+
+import com.app.todomanagement.dto.TodoDto;
+
+public interface TodoService {
+	
+	TodoDto addTodo(TodoDto todoDto);
+
+}
