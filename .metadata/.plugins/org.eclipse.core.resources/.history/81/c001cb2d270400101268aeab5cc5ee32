@@ -1,0 +1,5 @@
+package com.app.todomanagement.service;
+
+public interface AuthService {
+
+}

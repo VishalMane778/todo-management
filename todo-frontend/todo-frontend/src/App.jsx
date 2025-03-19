@@ -7,6 +7,7 @@ import HeaderComponent from './components/HeaderComponent'
 import FooterComponent from './components/FooterComponent'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import TodoComponent from './components/TodoComponent'
+import RegisterComponent from './components/RegisterComponent'
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -25,6 +26,8 @@ function App() {
          <Route path='/add-todo' element={<TodoComponent/>}></Route>
          {/* http:localhost:3000/update-todo/1 */}
          <Route path='/update-todo/:id' element={<TodoComponent/>}></Route>
+
+         <Route path='/register' element = { <RegisterComponent />}></Route>
         </Routes>
         <FooterComponent/>
         </BrowserRouter>

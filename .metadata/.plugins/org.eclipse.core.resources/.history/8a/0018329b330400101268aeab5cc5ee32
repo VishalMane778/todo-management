@@ -1,0 +1,5 @@
+package com.app.todomanagement.exception;
+
+public class GlobalExceptionHandler {
+
+}

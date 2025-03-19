@@ -1,0 +1,5 @@
+package com.app.todomanagement.config;
+
+public class SpringSecurityConfig {
+
+}

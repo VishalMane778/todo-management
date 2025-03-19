@@ -1,0 +1,9 @@
+package com.app.todomanagement.exception;
+
+import java.time.LocalDate;
+
+public class ErrorDetails {
+	private LocalDate timeStamp;
+	private String message;
+	private String details;
+}

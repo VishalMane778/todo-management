@@ -1,0 +1,18 @@
+package com.app.todomanagement.repository;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.app.todomanagement.entity.User;
+import java.util.List;
+
+
+public interface UserRepository extends JpaRepository<User, Long> {
+	
+	Optional<User> findByUserName(String userName);
+	
+	Boolean existsByEmail(String email);
+
+	Optional<User> findByNameOrEmail(String name, String email);
+}
